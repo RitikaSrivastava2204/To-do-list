@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Pangolin&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Pangolin';
+
+}
+body{
+    background-image: linear-gradient(135deg,rgb(81, 49, 110),rgb(10, 0, 22));
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    height: 70vh;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.75rem;
+    padding: 2rem;
+   
+}
+.container h2{
+    text-align: center;
+}
+.new-task-div{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    
+}
+.new-task-div .add-task-btn{
+    background-color: rgb(255, 150, 89);
+    width: 5rem;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    font-size: 0.9rem;
+}
+.new-task-div #input-box{
+    width: 75%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    
+    background-color: rgba(190, 190, 190, 0.349);
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+   
+}
+#task-list{
+    position: relative;
+    padding: 1rem 0;
+    height: 300px;
+    overflow-y: scroll;
+   
+}
+::-webkit-scrollbar{
+    height: 90%;
+   width: 2px;
+   background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #f79d4a;
+    border-radius: 2px;
+}
+
+
+ul li {
+    display: flex;
+    cursor: pointer;
+    height: 2.5rem;
+    list-style: none;
+    font-size: 17px;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+   
+}
+ul li:hover p{
+    color: rgb(92, 92, 92) ;
+}
+ul .checked i{
+    background-image: url("checked.png");
+    background-size: cover;
+    border-radius: 50%;
+    
+}
+ul li p{
+    padding: 0 10px;
+    width: 90%;
+}
+
+ul li .remove-task-btn{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    color: #ff7b00;
+    justify-self: flex-end;
+    background-color: white;
+    margin: 0 5px;
+}
+ul li .remove-task-btn:hover{
+    background-color: rgb(231, 231, 231);
+}
+ul li.checked p{
+    text-decoration: line-through;
+    color: rgb(92, 92, 92);
+
+}

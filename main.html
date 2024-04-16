@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewellery Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f3ee;
+            color: #463f3a;
+        }
+
+        header {
+            background-color: #8a817c;
+            color: #f4f3ee;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #bcb8b1;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .searching {
+            border: 2px solid #463f3a;
+            border-radius: 40px;
+            background-color: #f4f3ee;
+            margin-top: 5px;
+            margin-left: -25px;
+            width: 25%;
+            height: 1px;
+            padding: 20px;
+            padding-right: 10px;
+            position: absolute;
+        }
+
+        .searching input {
+            background: transparent;
+            color: #463f3a;
+            outline: none;
+            border: 0;
+            border-radius: 5px;
+            height: 28.99px;
+            width: 76%;
+            margin-left: 10px;
+            position: absolute;
+            margin-top: -13.5px;
+        }
+
+        .searching button {
+            border: 0;
+            background: transparent;
+            margin-left: 1px;
+            padding: 5px;
+            cursor: pointer;
+            margin-top: -15px;
+            float: right;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #f4f3ee;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #463f3a;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .feature-section {
+            background-color: #f4f3ee;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: #8a817c;
+        }
+
+        .feature-heading {
+            margin-top: 20px;
+            color: #463f3a;
+        }
+
+        @media (max-width: 768px) {
+            .feature-section {
+                padding: 50px 10px;
+            }
+        }
+
+        h2 {
+            color: #463f3a;
+        }
+
+        
+        .product-card {
+            margin: 10px;
+            background-color: #e0afa0;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease-in-out;
+            background-size: cover;
+            background-position: center center;
+            border-radius: 10px;
+        }
+
+        .product-card img {
+            height: 200px; /* Set your preferred height */
+            width: 100%; /* Responsive width */
+            object-fit: cover; /* Ensure the image covers the container */
+            border-radius: 10px; /* Add border-radius */
+        }
+
+        .product-card:hover {
+            background-position: 80% 20%;
+            transform: rotate3d(0.5, 1, 0, 8deg) scale(1.08);
+        }
+
+        .content-box {
+            background-color: white;
+            box-shadow: purple 0px 20px 50px -25px;
+            transition: all 0.5s ease-in-out;
+            transform-style: preserve-3d;
+            padding: 50px 25px 25px 25px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .content-box .card-title,
+        .content-box .card-content,
+        .content-box .see-more,
+        .content-box .card-text {
+            transition: all 0.5s ease-in-out;
+            transform: translate3d(0, 0, 20px);
+        }
+
+        .content-box .card-title:hover,
+        .content-box .card-content:hover,
+        .content-box .see-more:hover,
+        .content-box .card-text:hover {
+            transform: translate3d(0, 0, 50px);
+        }
+
+        .content-box .card-text {
+            padding-top: 15px;
+            font-size: 12px;
+            color: black;
+        }
+
+        footer {
+            background-color: #8a817c;
+            color: #f4f3ee;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Jewellery Store</h1>
+</header>
+
+<div class="searching">
+    <input type="search" placeholder="Search...">
+    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button><i class="fa-solid fa-microphone"></i></button>
+</div>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#blog">Blog</a>
+    <a href="#cart">Cart</a>
+    <a href="#login">Login</a>
+</nav>
+
+<div id="about" class="container">
+    <h2>About Us</h2>
+    <p>Welcome to our exquisite jewellery store. Discover timeless pieces crafted with precision and elegance.</p>
+</div>
+
+<div id="products" class="container">
+    <h2>Our Products</h2>
+
+    <!-- Bootstrap Card Template - Displayed in a Row -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card product-card card2" style="width: 18rem;">
+                <img class="card-img-top" src="CAM Star Mate Medallion Necklace.jpeg" alt="Card image cap"> <!-- Add your product image source -->
+                <div class="card-body content-box">
+                    <h5 class="card-title">Product 1</h5>
+                    <p class="card-text">Description of Product 1.</p>
+                    <!-- Button Container with Gap -->
+                    <div class="btn-container">
+                        <a href="#cart" class="btn btn-primary text-nowrap">Add to Cart</a>
+                        <button type="button" class="btn btn-success text-nowrap" data-bs-toggle="modal" data-bs-target="#tryOnModal1">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card card3" style="width: 18rem;">
+                <img class="card-img-top" src="CAM Star Mate Medallion Necklace.jpeg" alt="Card image cap"> <!-- Add your product image source -->
+                <div class="card-body content-box">
+                    <h5 class="card-title">Product 2</h5>
+                    <p class="card-text">Description of Product 2.</p>
+                    <!-- Button Container with Gap -->
+                    <div class="btn-container">
+                        <a href="#cart" class="btn btn-primary text-nowrap">Add to Cart</a>
+                        <button type="button" class="btn btn-success text-nowrap" data-bs-toggle="modal" data-bs-target="#tryOnModal1">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card card4" style="width: 18rem;">
+                <img class="card-img-top" src="CAM Star Mate Medallion Necklace.jpeg" alt="Card image cap"> <!-- Add your product image source -->
+                <div class="card-body content-box">
+                    <h5 class="card-title">Product 3</h5>
+                    <p class="card-text">Description of Product 3.</p>
+                    <!-- Button Container with Gap -->
+                    <div class="btn-container">
+                        <a href="#cart" class="btn btn-primary text-nowrap">Add to Cart</a>
+                        <button type="button" class="btn btn-success text-nowrap" data-bs-toggle="modal" data-bs-target="#tryOnModal1">Try On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Bootstrap Card Template - Displayed in a Row -->
+
+     <!-- Additional Features Section -->
+     <div class="feature-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fas fa-gem feature-icon"></i>
+                    <h3 class="feature-heading">Quality Materials</h3>
+                    <p>We use only the finest materials to create exquisite jewelry.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-gift feature-icon"></i>
+                    <h3 class="feature-heading">Gifts & Special Occasions</h3>
+                    <p>Find the perfect gift for your loved ones on special occasions.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-shipping-fast feature-icon"></i>
+                    <h3 class="feature-heading">Fast Shipping</h3>
+                    <p>Enjoy fast and reliable shipping to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Additional Features Section -->
+
+</div>
+
+<div id="blog" class="container">
+    <h2>Blog</h2>
+    <p>Stay updated with the latest trends and jewelry insights from our experts.</p>
+    <!-- Add blog posts here -->
+</div>
+
+<!-- Bootstrap Modals for Try On -->
+<div class="modal fade" id="tryOnModal1" tabindex="-1" role="dialog" aria-labelledby="tryOnModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tryOnModalLabel1">Permission</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Allow access to your camera.</p>
+                <!-- Add your virtual try-on content here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Allow</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tryOnModal2" tabindex="-1" role="dialog" aria-labelledby="tryOnModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tryOnModalLabel2">Permission</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Allow access to your camera.</p>
+                <!-- Add your virtual try-on content here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Allow</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tryOnModal3" tabindex="-1" role="dialog" aria-labelledby="tryOnModalLabel3" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tryOnModalLabel3">Permission</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Allow access to your camera.</p>
+                <!-- Add your virtual try-on content here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Allow</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Jewellery Store. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
